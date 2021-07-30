@@ -13,7 +13,7 @@ function App() {
   };
 
   const handleIncrement = () => {
-    setCounter(counter + 1);
+    setCounter((counter) => counter + 1);
   };
   return (
     <div className="App">
@@ -21,6 +21,7 @@ function App() {
         <img src={logo} className={`App-logo ${reverseClass}`} alt="logo" />
 
         <h1>Counter: {counter} </h1>
+
         <p>
           <button type="button" onClick={handleClick}>
             Reverse: {reverseClass}
