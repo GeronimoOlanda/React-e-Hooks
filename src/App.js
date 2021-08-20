@@ -1,18 +1,26 @@
 import './App.css';
-import { useState, useEffect } from 'react';
-const Button = (incrementButton) => {
-  return <button onClick={incrementButton}>+</button>;
+import P from 'prop-types';
+import { useState } from 'react';
+
+const Button = ({ incrementButton }) => {
+  return <button onClick={() => incrementButton(10)}>+</button>;
+};
+
+Button.propTypes = {
+  incrementButton: P.func,
 };
 
 function App() {
   const [counter, setCounter] = useState(0);
-  const incrementCounter = () => {
-    setCounter(counter + 1);
+
+  const incrementCounter = (num) => {
+    setCounter(counter + num);
   };
   return (
     <div className="App">
       <h1>Teste 3</h1>
-      <buton onClick={incrementCounter}> + </buton>
+      <p>{counter}</p>
+      <Button incrementButton={incrementCounter} />
     </div>
   );
 }
