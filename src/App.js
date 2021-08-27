@@ -1,10 +1,10 @@
 import './App.css';
 import P from 'prop-types';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
-const Button = React.memo(function Button({ incrementButton }) {
+const Button = ({ incrementButton }) => {
   return <button onClick={() => incrementButton(10)}>+</button>;
-});
+};
 Button.propTypes = {
   incrementButton: P.func,
 };
@@ -16,11 +16,17 @@ function App() {
     setCounter((c) => c + num);
   }, []);
   console.log('O Pai ta on e funcionano');
+  // utilizamos o useMemo para armazenar e utiliza-los quando precisar chama-los, sem a necessidade de renderização novamente
+
+  const btn = useMemo(() => {
+    return <Button incrementButton={incrementCounter} />;
+  }, [incrementCounter]);
+
   return (
     <div className="App">
       <h1>Teste 3</h1>
       <p>{counter}</p>
-      <Button incrementButton={incrementCounter} />
+      {btn}
     </div>
   );
 }
