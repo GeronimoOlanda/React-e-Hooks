@@ -42,18 +42,6 @@ function App() {
       .then((r) => setPosts(r));
   }, []);
 
-  useEffect(() => {
-    input.current.focus();
-    console.log(input.current); //o current seta o valor que foi passado atraves do useRef()
-  }, [value]);
-
-  useEffect(() => {
-    contador.current++;
-  });
-  const handleClick = (value) => {
-    setValue(value);
-  };
-
   return (
     <div className="App">
       <h1>Renderizou: {contador.current} </h1>
