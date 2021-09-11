@@ -53,7 +53,7 @@ function App() {
         return (
           posts.length > 0 &&
           posts.map((post) => {
-            return <Post key={post.id} post={post} handleClick={handleClick} />;
+            return <Post key={post.id} post={post} />;
           })
         );
       }, [posts])}
