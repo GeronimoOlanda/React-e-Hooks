@@ -1,17 +1,20 @@
 import React, { useContext, useState } from 'react';
 import './App.css';
 
+//criamos um estado inicial
 const globalState = {
   title: 'O titulo de um contexto',
   body: 'Jesus te ama',
   counter: 0,
 };
 
+//criamos um componente atraves do React.createContext();
+// esse componente tera duas coisas, um provider e o outro consumer(com useContext eliminamos o uso do consumer)
 // const GlobalContext = React.createContext(); cria um contexto global
 const GlobalContext = React.createContext();
 
 //eslint-disable-next-line
-const Div = ({ children}) => {
+const Div = () => {
   return (
     <>
       <H1 />
@@ -38,9 +41,11 @@ const H1 = () => {
 const P = () => {
   const TheContext = useContext(GlobalContext);
   const {
-    contextState: { body },
+    contextState: { body, counter },
+    contextState,
+    setContextState,
   } = TheContext;
-  return <p>{body}</p>;
+  return <p onClick={() => setContextState((s) => ({ ...s, counter: s.counter + 1 }))}>{body}</p>;
 };
 
 function App() {
