@@ -10,19 +10,20 @@ const globalState = {
 const GlobalContext = React.createContext();
 
 //eslint-disable-next-line
-const Div = ({ children }) => {
-  return <div className="App">{children}</div>;
+const Div = ({ children}) => {
+  return <H1 />;
 };
 
 //eslint-disable-next-line
 const H1 = ({ children }) => {
-  return <h1>{children}</h1>;
+  return <h1>Pegar este texto</h1>;
 };
 function App() {
   return (
-    <Div>
-      <H1>Oi</H1>
-    </Div>
+    <GlobalContext.Provider value={globalState}>
+      {/*provider diz que vamos prover um contexto*/}
+      <Div></Div>
+    </GlobalContext.Provider>
   );
 }
 
