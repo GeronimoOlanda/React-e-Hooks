@@ -1,6 +1,6 @@
 //criamos um estado inicial
 export const globalState = {
-  title: 'O titulo de um contexto',
+  title: 'Eu te amo Jesus Cristo',
   body: 'Jesus te ama',
-  counter: 0,
+  counter: 70,
 };

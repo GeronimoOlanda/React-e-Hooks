@@ -5,8 +5,11 @@ export const P = () => {
   const TheContext = useContext(GlobalContext);
   const {
     contextState: { body, counter },
-    contextState,
-    setContextState,
+    setState,
   } = TheContext;
-  return <p onClick={() => setContextState((s) => ({ ...s, counter: s.counter + 1 }))}>{body}</p>;
+  return (
+    <p onClick={() => setState((s) => ({ ...s, counter: s.counter + 1 }))}>
+      {body} {counter}
+    </p>
+  );
 };
