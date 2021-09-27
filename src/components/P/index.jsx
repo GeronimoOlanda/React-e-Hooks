@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { GlobalContext } from '../../contexts/AppContext';
 //eslint-disable-next-line
 export const P = () => {
   const TheContext = useContext(GlobalContext);

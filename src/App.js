@@ -1,22 +1,11 @@
-import React, { useContext, useState } from 'react';
 import './App.css';
-
-//criamos um estado inicial
-const globalState = {
-  title: 'O titulo de um contexto',
-  body: 'Jesus te ama',
-  counter: 0,
-};
-
-
-
+import { AppContext } from './contexts/AppContext';
+import { Div } from './components/Div';
 function App() {
-  const [contextState, setContextState] = useState(globalState);
   return (
-    <GlobalContext.Provider value={{ contextState, setContextState }}>
-      {/*provider diz que vamos prover um contexto*/}
+    <AppContext>
       <Div />
-    </GlobalContext.Provider>
+    </AppContext>
   );
 }
 
