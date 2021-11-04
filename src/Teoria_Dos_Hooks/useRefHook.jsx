@@ -60,7 +60,7 @@ function App() {
       <p>
         <input ref={input} type="search" value={value} onChange={(e) => setValue(e.target.value)} />
       </p>
-      {/* utilizar use memo para otimização quando necessario*/}
+      {/* utilizar use memo para memoização quando necessario*/}
       {useMemo(() => {
         return (
           posts.length > 0 &&
