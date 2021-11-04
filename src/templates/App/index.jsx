@@ -1,11 +1,13 @@
 import './styles.css';
 import React from 'react';
-
+import { PostsProvider } from '../../contexts/PostsProvider';
 function App() {
   return (
-    <div style={{ textAlign: 'center' }}>
-      <p>Oi</p>
-    </div>
+    <PostsProvider>
+      <div style={{ textAlign: 'center' }}>
+        <h1>Ola</h1>
+      </div>
+    </PostsProvider>
   );
 }
 
